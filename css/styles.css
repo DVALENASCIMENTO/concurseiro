@@ -1,0 +1,109 @@
+* {
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    display:flex;
+    background:#0f172a;
+    color:white;
+}
+
+.menu-btn {
+    position:fixed;
+    top:15px;
+    left:15px;
+    font-size:28px;
+    background:#1e293b;
+    color:white;
+    border:none;
+    padding:10px 15px;
+    cursor:pointer;
+    border-radius:8px;
+    z-index:1000;
+}
+
+#sidebar {
+    width:300px;
+    background:#1e293b;
+    height:100vh;
+    padding:20px;
+    position:fixed;
+    left:-320px;
+    top:0;
+    overflow-y:auto;
+    transition:0.3s;
+}
+
+#sidebar.active {
+    left:0;
+}
+
+.menu-item {
+    margin-bottom:20px;
+}
+
+.menu-title {
+    cursor:pointer;
+    padding:10px;
+    background:#334155;
+    border-radius:8px;
+    transition:0.3s;
+}
+
+.menu-title:hover {
+    background:#475569;
+}
+
+.submenu {
+    max-height:0;
+    overflow:hidden;
+    transition:max-height 0.4s ease;
+    padding-left:10px;
+}
+
+.menu-item.active .submenu {
+    max-height:500px;
+    margin-top:10px;
+}
+
+.submenu label {
+    display:block;
+    margin:6px 0;
+    font-size:0.9rem;
+}
+
+.progress-bar {
+    height:8px;
+    background:#334155;
+    border-radius:10px;
+    margin-top:10px;
+}
+
+.progress {
+    height:8px;
+    width:0%;
+    background:#22c55e;
+    border-radius:10px;
+    transition:0.4s;
+}
+
+main {
+    margin-left:40px;
+    padding:60px 20px;
+}
+.top-header{
+display:flex;
+align-items:center;
+gap:15px;
+padding:20px;
+margin-left:50px;
+}
+
+.logo{
+width:50px;
+height:50px;
+border-radius:12px;
+}
