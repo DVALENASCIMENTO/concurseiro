@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0f172a">
+<title>Concurseiro</title>
+
+<!-- PWA -->
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="icons/icon-192.png">
+
+<!-- LOGO (favicon tradicional) -->
+<link rel="shortcut icon" href="icons/icon-192.png">
+
+<link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+<header class="top-header">
+<img src="icons/icon-192.png" class="logo">
+<h1>Portal de Estudos</h1>
+</header>
+
+<button class="menu-btn" onclick="toggleMenu()">☰</button>
+
+<nav id="sidebar">
+<h2>📚 Matérias</h2>
+
+<!-- PORTUGUÊS -->
+<div class="menu-item">
+<div class="menu-title">📘 Língua Portuguesa</div>
+<div class="submenu">
+<label><input type="checkbox" data-materia="portugues"> Interpretação de Texto</label>
+<label><input type="checkbox" data-materia="portugues"> Gramática</label>
+<label><input type="checkbox" data-materia="portugues"> Redação</label>
+<div class="progress-bar"><div class="progress" id="progress-portugues"></div></div>
+</div>
+</div>
+
+<!-- MATEMÁTICA -->
+<div class="menu-item">
+<div class="menu-title">➗ Matemática Básica</div>
+<div class="submenu">
+<label><input type="checkbox" data-materia="matematica"> Porcentagem</label>
+<label><input type="checkbox" data-materia="matematica"> Regra de Três</label>
+<label><input type="checkbox" data-materia="matematica"> Razão e Proporção</label>
+<label><input type="checkbox" data-materia="matematica"> Juros Simples</label>
+<label><input type="checkbox" data-materia="matematica"> Média Aritmética</label>
+<div class="progress-bar"><div class="progress" id="progress-matematica"></div></div>
+</div>
+</div>
+
+<!-- RACIOCÍNIO LÓGICO -->
+<div class="menu-item">
+<div class="menu-title">🧠 Raciocínio Lógico</div>
+<div class="submenu">
+<label><input type="checkbox" data-materia="logica"> Proposições</label>
+<label><input type="checkbox" data-materia="logica"> Conectivos Lógicos</label>
+<label><input type="checkbox" data-materia="logica"> Negação</label>
+<label><input type="checkbox" data-materia="logica"> Diagramas (Conjuntos)</label>
+<label><input type="checkbox" data-materia="logica"> Sequências Lógicas</label>
+<div class="progress-bar"><div class="progress" id="progress-logica"></div></div>
+</div>
+</div>
+
+<!-- INFORMÁTICA -->
+<div class="menu-item">
+<div class="menu-title">💻 Informática</div>
+<div class="submenu">
+<label><input type="checkbox" data-materia="informatica"> Conceitos Básicos</label>
+<label><input type="checkbox" data-materia="informatica"> Sistema Operacional</label>
+<label><input type="checkbox" data-materia="informatica"> Pacote Office</label>
+<label><input type="checkbox" data-materia="informatica"> Internet</label>
+<label><input type="checkbox" data-materia="informatica"> Segurança da Informação</label>
+<div class="progress-bar"><div class="progress" id="progress-informatica"></div></div>
+</div>
+</div>
+
+<!-- DIREITO ADMINISTRATIVO -->
+<div class="menu-item">
+<div class="menu-title">⚖ Direito Administrativo</div>
+<div class="submenu">
+<label><input type="checkbox" data-materia="administrativo"> Princípios da Administração Pública</label>
+<label><input type="checkbox" data-materia="administrativo"> Atos Administrativos</label>
+<label><input type="checkbox" data-materia="administrativo"> Poderes Administrativos</label>
+<label><input type="checkbox" data-materia="administrativo"> Licitações</label>
+<label><input type="checkbox" data-materia="administrativo"> Agentes Públicos</label>
+<label><input type="checkbox" data-materia="administrativo"> Responsabilidade Civil do Estado</label>
+<label><input type="checkbox" data-materia="administrativo"> Controle da Administração</label>
+<div class="progress-bar"><div class="progress" id="progress-administrativo"></div></div>
+</div>
+</div>
+
+<!-- DIREITO CONSTITUCIONAL -->
+<div class="menu-item">
+<div class="menu-title">📜 Direito Constitucional</div>
+<div class="submenu">
+<label><input type="checkbox" data-materia="constitucional"> Princípios Fundamentais</label>
+<label><input type="checkbox" data-materia="constitucional"> Direitos e Garantias Fundamentais</label>
+<label><input type="checkbox" data-materia="constitucional"> Nacionalidade</label>
+<label><input type="checkbox" data-materia="constitucional"> Direitos Políticos</label>
+<label><input type="checkbox" data-materia="constitucional"> Organização do Estado</label>
+<label><input type="checkbox" data-materia="constitucional"> Administração Pública</label>
+<label><input type="checkbox" data-materia="constitucional"> Poderes da República</label>
+<div class="progress-bar"><div class="progress" id="progress-constitucional"></div></div>
+</div>
+</div>
+
+</nav>
+
+<main>
+<h1>Concurseiro</h1>
+<p>Marque os conteúdos já estudados. Seu progresso é salvo automaticamente.</p>
+</main>
+
+<script src="js/app.js"></script>
+<script>
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('sw.js');
+}
+</script>
+</body>
+</html>
