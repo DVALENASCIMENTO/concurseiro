@@ -1,109 +1,356 @@
-* {
+/* ================= RESET ================= */
+*{
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family: Arial, sans-serif;
+    font-family:'Segoe UI', Arial, sans-serif;
 }
 
-body {
+html{
+    scroll-behavior:smooth;
+}
+
+/* ================= BODY ================= */
+body{
     display:flex;
-    background:#0f172a;
-    color:white;
+    background:linear-gradient(135deg,#0f172a,#1e293b);
+    color:#f1f5f9;
+    min-height:100vh;
+    overflow-x:hidden;
 }
 
-.menu-btn {
+/* ================= SCROLLBAR ================= */
+::-webkit-scrollbar{ width:6px; }
+::-webkit-scrollbar-thumb{
+    background:#334155;
+    border-radius:10px;
+}
+
+/* ================= MENU BUTTON ================= */
+.menu-btn{
     position:fixed;
     top:15px;
     left:15px;
-    font-size:28px;
-    background:#1e293b;
+    font-size:22px;
+    background:#2563eb;
     color:white;
     border:none;
-    padding:10px 15px;
+    padding:10px 14px;
     cursor:pointer;
-    border-radius:8px;
+    border-radius:12px;
     z-index:1000;
-}
-
-#sidebar {
-    width:300px;
-    background:#1e293b;
-    height:100vh;
-    padding:20px;
-    position:fixed;
-    left:-320px;
-    top:0;
-    overflow-y:auto;
+    box-shadow:0 5px 20px rgba(0,0,0,0.5);
     transition:0.3s;
 }
 
-#sidebar.active {
+.menu-btn:hover{
+    transform:scale(1.05);
+    background:#1d4ed8;
+}
+
+/* ================= SIDEBAR ================= */
+#sidebar{
+    width:280px;
+    max-width:85%;
+    background:#111827;
+    height:100vh;
+    padding:25px;
+    position:fixed;
+    left:-100%;
+    top:0;
+    overflow-y:auto;
+    transition:0.4s ease;
+    box-shadow:5px 0 25px rgba(0,0,0,0.6);
+    z-index:999;
+    padding-top:90px;
+}
+
+#sidebar.active{
     left:0;
 }
 
-.menu-item {
+#sidebar h2{
     margin-bottom:20px;
+    font-size:1.2rem;
+    color:#38bdf8;
 }
 
-.menu-title {
-    cursor:pointer;
-    padding:10px;
-    background:#334155;
+/* ================= LINKS SIDEBAR ================= */
+#sidebar a{
+    display:block;
+    padding:12px;
+    margin:6px 0;
+    text-decoration:none;
+    color:#e2e8f0;
     border-radius:8px;
     transition:0.3s;
+    font-size:0.95rem;
 }
 
-.menu-title:hover {
-    background:#475569;
+#sidebar a:hover{
+    background:#1e293b;
+    color:#38bdf8;
 }
 
-.submenu {
+#sidebar a.active{
+    background:#2563eb;
+    color:white;
+}
+
+/* ================= MENU ITEMS ================= */
+.menu-item{ margin-bottom:20px; }
+
+.menu-title{
+    cursor:pointer;
+    padding:12px;
+    background:#1e293b;
+    border-radius:10px;
+    transition:0.3s;
+    font-weight:600;
+}
+
+.menu-title:hover{
+    background:#334155;
+}
+
+/* ================= SUBMENU ================= */
+.submenu{
     max-height:0;
     overflow:hidden;
     transition:max-height 0.4s ease;
     padding-left:10px;
 }
 
-.menu-item.active .submenu {
-    max-height:500px;
+.menu-item.active .submenu{
+    max-height:800px;
     margin-top:10px;
 }
 
-.submenu label {
-    display:block;
-    margin:6px 0;
+.submenu label{
+    display:flex;
+    align-items:center;
+    gap:6px;
+    margin:8px 0;
     font-size:0.9rem;
 }
 
-.progress-bar {
-    height:8px;
-    background:#334155;
+/* ================= PROGRESS BAR ================= */
+.progress-bar{
+    height:6px;
+    background:#1e293b;
     border-radius:10px;
     margin-top:10px;
 }
 
-.progress {
-    height:8px;
+.progress{
+    height:6px;
     width:0%;
-    background:#22c55e;
+    background:linear-gradient(90deg,#22c55e,#16a34a);
     border-radius:10px;
     transition:0.4s;
 }
 
-main {
-    margin-left:40px;
-    padding:60px 20px;
-}
+/* ================= HEADER ================= */
 .top-header{
-display:flex;
-align-items:center;
-gap:15px;
-padding:20px;
-margin-left:50px;
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:70px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:12px;
+    background:rgba(15,23,42,0.95);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid rgba(255,255,255,0.05);
+    z-index:900;
+    padding:0 20px;
+}
+
+.top-header h1{
+    font-size:clamp(1.1rem, 2vw, 1.6rem);
+    color:#38bdf8;
+    text-align:center;
 }
 
 .logo{
-width:50px;
-height:50px;
-border-radius:12px;
+    width:40px;
+    height:40px;
+    border-radius:10px;
+}
+
+/* ================= MAIN ================= */
+main{
+    flex:1;
+    width:100%;
+    margin:0 auto;
+    padding:100px 40px 40px 40px;
+    max-width:1200px;
+}
+
+/* ================= HOME ================= */
+.home{
+    padding:20px;
+}
+
+.welcome h1{
+    font-size:clamp(1.4rem,3vw,2rem);
+    margin-bottom:10px;
+    color:#38bdf8;
+}
+
+.welcome p{
+    color:#94a3b8;
+    margin-bottom:30px;
+}
+
+/* ================= CONCURSOS ================= */
+.concursos h2{
+    margin-bottom:20px;
+    color:#60a5fa;
+}
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:20px;
+}
+
+/* ================= CARD ================= */
+.card{
+    background:rgba(30,41,59,0.85);
+    padding:20px;
+    border-radius:18px;
+    box-shadow:0 15px 40px rgba(0,0,0,0.5);
+    transition:0.3s;
+    backdrop-filter:blur(10px);
+    border:1px solid rgba(255,255,255,0.05);
+}
+
+.card:hover{
+    transform:translateY(-5px);
+}
+
+.card h3{
+    margin-bottom:10px;
+    color:#93c5fd;
+}
+
+.card p{
+    color:#cbd5e1;
+    margin-bottom:15px;
+    font-size:0.9rem;
+}
+
+/* ================= BADGES ================= */
+.badge{
+    display:inline-block;
+    padding:6px 12px;
+    border-radius:8px;
+    font-size:0.75rem;
+    margin-bottom:12px;
+    font-weight:600;
+}
+
+.aberto{ background:#16a34a; }
+.previsto{ background:#facc15; color:#000; }
+.estudo{ background:#3b82f6; }
+
+/* ================= BOTÕES ================= */
+.card button,
+.btn-voltar{
+    width:100%;
+    padding:12px;
+    border:none;
+    border-radius:10px;
+    background:linear-gradient(90deg,#38bdf8,#0ea5e9);
+    color:#0f172a;
+    font-weight:bold;
+    letter-spacing:0.5px;
+    cursor:pointer;
+    transition:0.3s;
+    font-size:0.95rem;
+}
+
+.card button:hover,
+.btn-voltar:hover{
+    transform:scale(1.05);
+}
+
+/* ================= CONTEÚDO ================= */
+h1{ font-size:clamp(1.5rem,3vw,2rem); margin-bottom:25px; }
+h2{ margin-bottom:15px; }
+h3{ margin-top:15px; margin-bottom:8px; }
+
+ul,ol{
+    padding-left:20px;
+    margin-top:10px;
+}
+li{ margin-bottom:8px; }
+
+.card img{
+    width:100%;
+    margin-top:15px;
+    border-radius:12px;
+    box-shadow:0 5px 20px rgba(0,0,0,0.5);
+}
+
+iframe{
+    width:100%;
+    max-width:100%;
+    border-radius:12px;
+    margin-bottom:15px;
+    box-shadow:0 5px 25px rgba(0,0,0,0.5);
+}
+
+/* ================= RESPONSIVO TABLET ================= */
+@media(max-width:768px){
+
+    main{
+        padding:90px 20px 40px 20px;
+    }
+
+    .home{
+        padding:10px;
+    }
+
+    .cards{
+        grid-template-columns:1fr;
+    }
+
+}
+
+/* ================= RESPONSIVO MOBILE PEQUENO ================= */
+@media(max-width:480px){
+
+    .menu-btn{
+        top:8px;
+        left:8px;
+        padding:8px 10px;
+        font-size:18px;
+    }
+
+    .top-header{
+        height:60px;
+    }
+
+    main{
+        padding:80px 15px 30px 15px;
+    }
+
+    .card{
+        padding:15px;
+    }
+
+    .badge{
+        font-size:0.65rem;
+        padding:5px 8px;
+    }
+
+    .card button{
+        padding:10px;
+        font-size:0.9rem;
+    }
+
 }
